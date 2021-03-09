@@ -1,3 +1,4 @@
-const message:string = 'hello world';
+import App from './app';
+import './styles/index.css'
 
-console.log(message);
+new App(document.getElementById('app'));
