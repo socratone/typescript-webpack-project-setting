@@ -15,8 +15,11 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        test: /\.scss$/,
+        // 먼저 'sass-laoder'가 SASS를 CSS로 바꾼다.
+        // 다음으로 'css-loader'가 css를 commonJS로 바꾼다.
+        // 다음으로 MiniCssExtractPlugin이 javascript 중에 css만 따로 뽑아낸다.
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
     ],
   },
